@@ -1,0 +1,289 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@font-face {
+    font-family: 'cajito';
+    src: url('cajitoregular/cajito.otf');
+}
+// MIXINS
+@mixin fontStyleColor {
+  font-family: 'cajito';
+  color: #3A3A3C;
+}
+
+// VARIABLES
+$gray: #3A3A3C;
+$font: 'cajito';
+
+// GENERAL FIXES
+html, body, ul, li{
+  margin: 0px;
+  padding: 0px;
+}
+
+// HEADER STYLING: NAME
+header {
+  height: 125px;
+  position: relative;
+  background:
+  linear-gradient(
+    rgba(#466C79, 0.06),
+    rgba(#466C79, 0.06)
+  ),
+  url("../images/whitediamond.png");
+  background-repeat: repeat;
+  background-size: contain;
+
+// INSIDE HEADER NAME AND TITLE
+  .headname {
+    h1 {
+      @include fontStyleColor;
+      font-size: 40px;
+      position: absolute;
+      left: 8%;
+      text-transform: uppercase;
+    }
+    h2{
+      // @include fontStyleColor;
+      font-family: 'cajito';
+      color: #466C79;
+      font-weight: 200;
+      font-size: 20px;
+      position: absolute;
+      top: 45%;
+      left: 13%;
+    }
+    h3 {
+      @include fontStyleColor;
+      font-size: 70px;
+      font-weight: 300;
+      position: absolute;
+      top: -37%;
+      left: 4%;
+    }
+  }
+
+// SOCIAL MEDIA ICONS
+.socialmediaicons {
+  position: absolute;
+  left: 85%;
+  top: 65%;
+  width: 200px;
+    ul {
+      li {
+        display: inline;
+        list-style: none;
+        padding: 5%;
+        a {
+          color: $gray;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #466C79;
+        }
+      }
+    }
+  }
+}
+
+// NAVIGATION
+nav {
+  text-align: center;
+  background-color: $gray;
+  ul {
+    li {
+      display: inline;
+      list-style: none;
+      padding: 2%;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: $gray;
+        color: white;
+        font-family: $font;
+        padding: .5%;
+        padding-top: 1%;
+        font-size: 20px;
+      }
+      a:hover {
+        font-weight: 900;
+        color: #466C79;
+      }
+    }
+  }
+}
+
+// MIDDLE CONTENT/ SHORTENED ABOUT ME
+section {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 5%;
+
+  .meblurb {
+    @include fontStyleColor;
+    font-size: 22px;
+    width: 38%;
+  }
+  .largecurlyicon {
+    img {
+      height: 190px;
+    }
+  }
+  .mephoto {
+    img{
+      box-sizing: border-box;
+      height: 180px;
+    }
+  }
+}
+
+// PROJECT SECTION
+.secondsection {
+  background-color: #fafafa;
+  margin-top: 5%;
+  h2 {
+    font-family: 'cajito';
+    text-transform: uppercase;
+    color: #466C79;
+    font-size: 20px;
+    margin-left: 5%;
+    padding-top: 2%;
+    }
+  .projectcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    margin: 0 auto;
+    .project {
+      padding: 1% 2%;
+      img {
+        width: 290px;
+        height: 155px;
+        text-align: center;
+        object-fit: contain;
+        }
+      .border {
+        transition: 1s ease;
+        }
+      .border img:hover{
+        box-shadow: 0 0 0 10px #000000;
+        transition: 1s ease;
+        }
+      }
+    }
+  }
+
+// FOOTER
+footer {
+  background-color: $gray;
+  height: 25px;
+  h3 {
+    font-size: 15px;
+    color: white;
+    font-family: 'cajito';
+    text-align: center;
+    padding-top: 1%;
+    }
+  }
+
+
+// BLOG SECTION: FEATURED POST
+// .thirdsection {
+//   float: left;
+//   h2 {
+//     font-family: 'cajito';
+//     color: #466C79;
+//     font-size: 32px;
+//     margin-left: 5%;
+//     padding-top: 2%;
+//   }
+//     .blogpost {
+//       list-style: none;
+//       padding: 10%;
+//       span {
+//       @include fontStyleColor;
+//       margin-left: 15%;
+//       list-style: none;
+//       }
+//       h3 {
+//       @include fontStyleColor;
+//       margin-left:15%;
+//       text-decoration: none;
+//       }
+//     }
+//   }
+
+
+
+
+
+
+
+
+// MOBILE MEDIA QUERY
+
+@media (max-width: 699px) {
+
+  header {
+    padding-top: 0%;
+  }
+
+  header .headname h1 {
+    top: 20%;
+    left: 19%;
+  }
+
+  header .headname h2 {
+    left: 15%;
+    top: 62%;
+  }
+
+  header .headname h3 {
+    left: 8%;
+    top: -20%;
+  }
+
+  header .fullhead .socialmediaicons {
+    top: 150%;
+    left: 60%;
+  }
+
+  nav ul li a {
+    font-size: 19px;
+    padding: 2% 0;
+    padding-top: 3%;
+  }
+
+  section {
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 20%;
+
+    .meblurb {
+      @include fontStyleColor;
+      font-size: 16px;
+      width: 50%;
+    }
+    .largecurlyicon {
+      img {
+        height: 70px;
+        padding: 17%;
+      }
+    }
+    .mephoto {
+      img{
+        height: 130px;
+        padding: 8%;
+      }
+    }
+  }
+}
