@@ -1,174 +1,314 @@
-@font-face {
-  font-family: 'cajito';
-  src: url("cajitoregular/cajito.otf"); }
-html, body, ul, li {
-  margin: 0px;
-  padding: 0px; }
-
-header {
-  height: 125px;
-  position: relative;
-  background: linear-gradient(rgba(70, 108, 121, 0.06), rgba(70, 108, 121, 0.06)), url("../images/whitediamond.png");
-  background-repeat: repeat;
-  background-size: contain; }
-  header .headname h1 {
-    font-family: 'cajito';
-    color: #3A3A3C;
-    font-size: 40px;
-    position: absolute;
-    left: 8%;
-    text-transform: uppercase; }
-  header .headname h2 {
-    font-family: 'cajito';
-    color: #466C79;
-    font-weight: 200;
-    font-size: 20px;
-    position: absolute;
-    top: 45%;
-    left: 13%; }
-  header .headname h3 {
-    font-family: 'cajito';
-    color: #3A3A3C;
-    font-size: 70px;
-    font-weight: 300;
-    position: absolute;
-    top: -37%;
-    left: 4%; }
-  header .socialmediaicons {
-    position: absolute;
-    left: 85%;
-    top: 65%;
-    width: 200px; }
-    header .socialmediaicons ul li {
-      display: inline;
-      list-style: none;
-      padding: 5%; }
-      header .socialmediaicons ul li a {
-        color: #3A3A3C;
-        text-decoration: none; }
-      header .socialmediaicons ul li a:hover {
-        color: #466C79; }
-
-nav {
+/* ============================================================
+  NAVIGATION
+============================================================ */
+nav ul {
+  list-style-type: none;
+  margin: 0 0 30px 0;
+  padding: 0;
   text-align: center;
-  background-color: #3A3A3C; }
-  nav ul li {
-    display: inline;
-    list-style: none;
-    padding: 2%;
-    text-decoration: none; }
-    nav ul li a {
-      text-decoration: none;
-      text-transform: uppercase;
-      display: inline-block;
-      background-color: #3A3A3C;
-      color: white;
-      font-family: "cajito";
-      padding: .5%;
-      padding-top: 1%;
-      font-size: 20px; }
-    nav ul li a:hover {
-      font-weight: 900;
-      color: #466C79; }
+}
+nav ul li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+nav ul li a {
+  display: block;
+  padding: 5px 20px;
+  color: #fff;
+  background-color: #32c896;
+}
+nav ul li a:hover {
+  color: #fff;
+  background-color: #238b68;
+}
+nav ul li a.active {
+  color: #fff;
+  background-color: #238b68;
+}
 
-section {
-  width: 65%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+/* ============================================================
+  GLOBAL
+============================================================ */
+.effects {
+  padding-left: 15px;
+}
+.effects .img {
+  position: relative;
+  float: left;
+  margin-bottom: 5px;
+  width: 25%;
+  overflow: hidden;
+}
+.effects .img:nth-child(n) {
+  margin-right: 5px;
+}
+.effects .img:first-child {
+  margin-left: -15px;
+}
+.effects .img:last-child {
+  margin-right: 0;
+}
+.effects .img img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+a.close-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background-color: #000;
+  cursor: pointer;
+}
+a.close-overlay.hidden {
+  display: none;
+}
+
+a.expand {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  border: solid 5px #fff;
+  text-align: center;
+  color: #fff;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+}
+
+/* ============================================================
+  EFFECT 1 - SLIDE IN BOTTOM
+============================================================ */
+#effect-1 .overlay {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+}
+#effect-1 .overlay a.expand {
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  margin: 0 auto -30px auto;
+}
+#effect-1 .img.hover .overlay {
+  height: 100%;
+}
+
+/* ============================================================
+  EFFECT 2 - SLIDE IN TOP
+============================================================ */
+#effect-2 .overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+}
+#effect-2 .overlay a.expand {
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin: -30px auto 0 auto;
+}
+#effect-2 .img.hover .overlay {
+  height: 100%;
+}
+
+/* ============================================================
+  EFFECT 3 - SLIDE IN LEFT
+============================================================ */
+#effect-3 .overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+}
+#effect-3 .overlay a.expand {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin: auto 0 auto -30px;
+}
+#effect-3 .img.hover .overlay {
+  width: 100%;
+}
+
+/* ============================================================
+  EFFECT 4 - SLIDE IN RIGHT
+============================================================ */
+#effect-4 .overlay {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+}
+#effect-4 .overlay a.expand {
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  margin: auto -30px auto 0;
+}
+#effect-4 .img {
+  overflow: hidden;
+}
+#effect-4 .img.hover .overlay {
+  width: 100%;
+}
+
+/* ============================================================
+  EFFECT 5 - ICON BORDER ANIMATE
+============================================================ */
+#effect-5 .overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+#effect-5 .overlay a.expand {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#effect-5 .img.hover .overlay {
+  opacity: 1;
+}
+#effect-5 .img.hover .overlay a.expand {
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+}
+
+/* ============================================================
+  EFFECT 6 - ICON BOUNCE IN
+============================================================ */
+#effect-6 .overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+#effect-6 .overlay a.expand {
+  left: 0;
+  right: 0;
+  top: 0;
   margin: 0 auto;
-  margin-top: 5%; }
-  section .meblurb {
-    font-family: 'cajito';
-    color: #3A3A3C;
-    font-size: 22px;
-    width: 38%; }
-  section .largecurlyicon img {
-    height: 190px; }
-  section .mephoto img {
-    box-sizing: border-box;
-    height: 180px; }
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#effect-6 .img.hover .overlay {
+  opacity: 1;
+}
+#effect-6 .img.hover .overlay a.expand {
+  top: 50%;
+  margin-top: -30px;
+  opacity: 1;
+}
 
-.secondsection {
-  background-color: #fafafa;
-  margin-top: 5%; }
-  .secondsection h2 {
-    font-family: 'cajito';
-    text-transform: uppercase;
-    color: #466C79;
-    font-size: 20px;
-    margin-left: 5%;
-    padding-top: 2%; }
-  .secondsection .projectcontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: center;
-    margin: 0 auto; }
-    .secondsection .projectcontainer .project {
-      padding: 1% 2%; }
-      .secondsection .projectcontainer .project img {
-        width: 290px;
-        height: 155px;
-        text-align: center;
-        object-fit: contain; }
-      .secondsection .projectcontainer .project h2 {
-        font-family: 'cajito';
-        color: #3A3A3C;
-        font-size: 18px;
-        text-transform: none;
-        font-weight: 200; }
-
-footer {
-  background-color: #3A3A3C;
-  height: 25px; }
-  footer h3 {
-    font-size: 15px;
-    color: white;
-    font-family: 'cajito';
-    text-align: center;
-    padding-top: 1%; }
-
-@media (max-width: 699px) {
-  header {
-    padding-top: 0%; }
-
-  header .headname h1 {
-    top: 20%;
-    left: 19%; }
-
-  header .headname h2 {
-    left: 15%;
-    top: 62%; }
-
-  header .headname h3 {
-    left: 8%;
-    top: -20%; }
-
-  header .fullhead .socialmediaicons {
-    top: 150%;
-    left: 60%; }
-
-  nav ul li a {
-    font-size: 19px;
-    padding: 2% 0;
-    padding-top: 3%; }
-
-  section {
-    width: 97%;
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Media Queries
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+@media only screen and (max-width: 1100px) {
+  .effects {
+    padding-left: 5px;
+  }
+  .effects .img {
+    width: 50%;
+  }
+  .effects .img:nth-child(n) {
+    margin-right: 5px;
+  }
+  .effects .img:first-child {
+    margin-left: 0;
+  }
+  .effects .img:nth-child(2n-1) {
+    margin-left: -5px;
+  }
+  .effects .img:nth-child(2n) {
+    margin-right: 0;
+  }
+  .effects .img:last-child {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .effects .img {
+    width: 100%;
+  }
+  .effects .img:nth-child(n) {
+    margin-right: 0;
+  }
+  .effects .img:first-child {
+    margin-left: 0;
+  }
+  .effects .img:nth-child(2n-1) {
+    margin-left: 0;
+  }
+  .effects .img:nth-child(2n) {
+    margin-right: 0;
+  }
+  .effects .img:last-child {
+    margin-right: 0;
+  }
+  .effects .img img {
     margin: 0 auto;
-    margin-top: 20%; }
-    section .meblurb {
-      font-family: 'cajito';
-      color: #3A3A3C;
-      font-size: 16px;
-      width: 50%; }
-    section .largecurlyicon img {
-      height: 70px;
-      padding: 17%; }
-    section .mephoto img {
-      height: 130px;
-      padding: 8%; } }
+  }
+}
