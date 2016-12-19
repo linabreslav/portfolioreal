@@ -171,12 +171,12 @@ section {
         text-align: center;
         object-fit: contain;
         }
-      .border {
-        transition: 1s ease;
-        }
-      .border img:hover{
-        box-shadow: 0 0 0 10px #000000;
-        transition: 1s ease;
+        h2 {
+          font-family: 'cajito';
+          color: $gray;
+          font-size: 18px;
+          text-transform: none;
+          font-weight: 200;
         }
       }
     }

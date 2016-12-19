@@ -115,11 +115,12 @@ section {
         height: 155px;
         text-align: center;
         object-fit: contain; }
-      .secondsection .projectcontainer .project .border {
-        transition: 1s ease; }
-      .secondsection .projectcontainer .project .border img:hover {
-        box-shadow: 0 0 0 10px #000000;
-        transition: 1s ease; }
+      .secondsection .projectcontainer .project h2 {
+        font-family: 'cajito';
+        color: #3A3A3C;
+        font-size: 18px;
+        text-transform: none;
+        font-weight: 200; }
 
 footer {
   background-color: #3A3A3C;
